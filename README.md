@@ -1,1 +1,1 @@
-# Animatey
+# animatey
