@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/slider.css">
+        <script src="scripts/scripts.js"></script>
+    </head>
+    <body>
+        <div id="main_grid">
+            <div id="menu_grid">
+                <div id="menu_header" style="text-align:center;">
+
+
+                    <svg data-brackets-id="5126" width="100%" height="100%" viewBox="1500 -550 800 800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg_container_1">
+
+                        <style data-brackets-id="5127">
+
+                            /* Styles for the first copy of the text (i.e. the first colour) */
+                            .text-copy_1:nth-child(1) {
+                                stroke: #360745;
+                                stroke-dashoffset: 7%;
+                            }
+
+                            /* Styles for the second copy of the text (i.e. the second colour) */
+                            .text-copy_1:nth-child(2) {
+                                stroke: #D61C59;
+                                stroke-dashoffset: 14%;
+                            }
+
+                            /* Styles for the third copy of the text (i.e. the third colour) */
+                            .text-copy_1:nth-child(3) {
+                                stroke: #E7D84B;
+                                stroke-dashoffset: 21%;
+                            }
+
+                            /* Styles for the fourth copy of the text (i.e. the fourth colour) */
+                            .text-copy_1:nth-child(4) {
+                                stroke: #EFEAC5;
+                                stroke-dashoffset: 28%;
+                            }
+
+                            /* Styles for the fifth copy of the text (i.e. the fifth colour) */
+                            .text-copy_1:nth-child(5) {
+                                stroke: #1B8798;
+                                stroke-dashoffset: 35%;
+                            }
+
+                            .text-copy_1 {
+                                font-size: 10em;
+                                fill: none;
+                                stroke-dasharray: 7% 21%;
+                                stroke-width: 3px;
+                                animation: elastic-stroke 9s infinite linear;
+                            }
+
+
+                            @keyframes elastic-stroke {
+                                50% {
+                                    stroke-dashoffset: 35%;
+                                    stroke-dasharray: 0 87.5%;
+                                }
+                            }
+
+                        </style>
+                        <g data-brackets-id="5128" transform="scale(3)" style="margin-top: 20px;">
+                            <text class="text-copy_1 portico" style="stroke: rgb(239, 239, 239); stroke-dashoffset: 0%;">animatey   💬</text>
+                            <text class="text-copy_1 portico" style="stroke: rgb(239, 239, 239); stroke-dashoffset: 28%;">animatey   💬</text>
+                            <text class="text-copy_1 portico" style="stroke: rgb(239, 239, 239); stroke-dashoffset: 56%;">animatey   💬</text>
+                            <text class="text-copy_1 portico" style="stroke: rgb(239, 239, 239); stroke-dashoffset: 84%;">animatey   💬</text>
+                        </g>
+                    </svg>
+
+
+
+
+                </div>
+                <div id="menu_options">
+                    <div id="text_input_options_grid">
+                        <div class="options_heading">
+                            TEXT
+                        </div>
+                        <textarea id="animation_text_input" placeholder="Enter text to animate here..." oninput="update_text_display()" ></textarea>
+                        <select id="font_select" onchange="update_text_display()">
+                            <option value="portico">Portico</option>
+                            <option value="roboto">Roboto</option>
+                            <option value="arial">Arial</option>
+                            <option value="montserrat">Montserrat</option>
+                            <option value="kirang">KirangHaerang</option>
+                            <option value="lobster">Lobster</option>
+                        </select>
+
+                        <div id="font_size_wrapper">
+                            <input id="font_size_input" type="text" name="font_size">
+                            <select id="font_size_select" >
+                                <option value="px">px</option>
+                                <option value="em">em</option>
+                            </select>
+                        </div>
+
+                        <div id="animation_options_grid">
+                            <div class="options_heading">
+                                ANIMATION
+                            </div>
+
+                            <select>
+                                <option value="elastic">Elastic</option>
+                                <option value="typewriter">Typewriter</option>
+                            </select>
+
+                            <div class="options_descriptor" id="elastic_colours_descriptor">
+                                Colour(s)     
+                            </div>
+
+                            <div id="colour_palette">
+
+                            </div>
+                            <input id="elastic_colour_input" type="text" name="elastic_colour_input">
+                            <button onclick="update_elastic_colours()">Add colour</button>
+
+                            <div class="options_descriptor" id="elastic_duration_descriptor">
+                                Duration  
+                            </div>
+
+                            <input id="elastic_duration_slider" type="range" min="0" max="20" step="any" onchange="update_elastic_speed()">
+
+                            <input type="checkbox" id="infinite_loop_checkbox" name="infinite_loop" value="infinite_loop" checked onclick="update_elastic_looping()">    
+                            <label for="infinite_loop">Infinite loop</label>
+                            <input id="loop_count_input" type="text" name="loop_count" disabled oninput="update_elastic_loop_count()">
+
+                            <select id="elastic_easings_select" onchange="update_elastic_easing()">
+                                <option value="linear">linear</option>
+                                <option value="ease">ease</option>
+                                <option value="ease-in">ease-in</option>
+                                <option value="ease-out">ease-out</option>
+                                <option value="ease-in-out">ease-in-out</option>
+                            </select>
+
+                            <div class="options_descriptor" id="elastic_animation_events_descriptor">
+                                Animation Event(s)
+                            </div>
+
+                            <div id="elastic_animation_events_grid">
+                                <input class="elastic_timestamp" type="text" name="elastic_timestamp">
+                                <select class="elastic_event" >
+                                    <option value="linear">Colour lengths</option>
+                                    <option value="ease">Colour offset</option>
+                                </select>
+                                <input class="elastic_event_value" type="text" name="elastic_event_value">
+
+                                <input class="elastic_timestamp" type="text" name="elastic_timestamp">
+                                <select class="elastic_event" >
+                                    <option value="linear">Colour lengths</option>
+                                    <option value="ease">Colour offset</option>
+                                </select>
+                                <input class="elastic_event_value" type="text" name="elastic_event_value">
+
+                                <input class="elastic_timestamp" type="text" name="elastic_timestamp">
+                                <select class="elastic_event" >
+                                    <option value="linear">Colour lengths</option>
+                                    <option value="ease">Colour offset</option>
+                                </select>
+                                <input class="elastic_event_value" type="text" name="elastic_event_value">
+
+
+                                <input class="elastic_timestamp" type="text" name="elastic_timestamp">
+                                <select class="elastic_event" >
+                                    <option value="linear">Colour lengths</option>
+                                    <option value="ease">Colour offset</option>
+                                </select>
+                                <input class="elastic_event_value" type="text" name="elastic_event_value">
+
+                                <input class="elastic_timestamp" type="text" name="elastic_timestamp">
+                                <select class="elastic_event" >
+                                    <option value="linear">Colour lengths</option>
+                                    <option value="ease">Colour offset</option>
+                                </select>
+                                <input class="elastic_event_value" type="text" name="elastic_event_value">
+
+                            </div>
+                            <button onclick="download_svg()">Export SVG</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="svg_wrapper">
+                <svg width="100%" height="100%" viewBox="0 -400 800 800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg_container">
+
+                    <style>
+
+                        /* Styles for the first copy of the text (i.e. the first colour) */
+                        .text-copy:nth-child(1) {
+                            stroke: #360745;
+                            stroke-dashoffset: 7%;
+                        }
+
+                        /* Styles for the second copy of the text (i.e. the second colour) */
+                        .text-copy:nth-child(2) {
+                            stroke: #D61C59;
+                            stroke-dashoffset: 14%;
+                        }
+
+                        /* Styles for the third copy of the text (i.e. the third colour) */
+                        .text-copy:nth-child(3) {
+                            stroke: #E7D84B;
+                            stroke-dashoffset: 21%;
+                        }
+
+                        /* Styles for the fourth copy of the text (i.e. the fourth colour) */
+                        .text-copy:nth-child(4) {
+                            stroke: #EFEAC5;
+                            stroke-dashoffset: 28%;
+                        }
+
+                        /* Styles for the fifth copy of the text (i.e. the fifth colour) */
+                        .text-copy:nth-child(5) {
+                            stroke: #1B8798;
+                            stroke-dashoffset: 35%;
+                        }
+
+                        .text-copy {
+                            font-size: 10em;
+                            fill: none;
+                            stroke-dasharray: 7% 21%;
+                            stroke-width: 3px;
+                            animation: elastic-stroke 9s infinite linear;
+                        }
+
+
+                        @keyframes elastic-stroke {
+                            50% {
+                                stroke-dashoffset: 35%;
+                                stroke-dasharray: 0 87.5%;
+                            }
+                        }
+
+                    </style>
+                    <g class="g-ants" id="text_group">
+                        <text id="animation_text" text-anchor="middle"
+                              x="0"
+                              y="0"
+                              class="text--line">
+                            
+                        </text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </body>
+</html>
